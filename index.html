@@ -5,32 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
+    <title>ToDo List</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link       rel="stylesheet"       href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+              integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+              crossorigin="anonymous"      />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./all.css">
 </head>
 
 <body>
     <div id="app" class="todos">
-        <h1 class="todo-heading ">TODO LIST EXERCISE</h1>
+        <h1>Todo List</h1>
+        <h2>Get things done, one item at a time.</h2>
         <div class="add-new-item">
             <input type="text" placeholder="加入一個新工作" class="new-item" v-model="newTodo" @keyup.enter="addTodo">
-            <button class="btn-add" type="button" @click="addTodo">新增</button>
+            <button class="btn-add" type="button" @click="addTodo">ADD ITEM</button>
         </div>
         <ul class="todo-list">
             <li class="todoItem" v-for="(item,key) in filteredTodos" @dblclick="editTodo(item)">
-                <div class="d-flex" v-if="item.id !==cacheTodo.id">
-                    <input type="checkbox" class="form-check-input" v-model="item.completed" :id="item.id">
+                <div class="todoDescription" v-if="item.id !==cacheTodo.id">
+
+
                     <label class="form-check-label" :class="{'completed':item.completed}" :for="item.id">
-                        {{item.title}}
+                        <p> {{item.title}}</p>
+
+
+
 
                     </label>
-                    <button type="button" class="btn-delete" @click="removeTodo(item)">刪除</button>
+                    <input type="checkbox" class="form-check-input" v-model="item.completed" :id="item.id">
+                    <button type="button" class="btn-delete" @click="removeTodo(item)"><i aria-hidden="true"
+                            class="material-icons">delete</i></button>
                     <br>
                 </div>
-
                 <input type="text" class="form-control" v-if="item.id ===cacheTodo.id" v-model="cacheTitle"
                     @keyup.esc="cancelEdit()" @keyup.enter="doneEdit(item)">
+
+
+
             </li>
 
 
@@ -38,11 +51,12 @@
         </ul>
 
         <div class="control">
-            <a href="#" class="btn" :class="{'active':visibility == 'all'}" @click="visibility='all'">全部</a>
-            <a href="#" class="btn" :class="{'active':visibility == 'active'}" @click="visibility='active'">進行中</a>
+            <a href="#" class="btn" :class="{'active':visibility == 'all'}" @click="visibility='all'">All</a>
+            <a href="#" class="btn" :class="{'active':visibility == 'active'}" @click="visibility='active'">In
+                Progress</a>
             <a href="#" class="btn" :class="{'active':visibility == 'completed'}"
-                @click="visibility='completed'">已完成</a>
-            <a class="btn" href="#" @click="clearAll">清除所有任務</a>
+                @click="visibility='completed'">Finished</a>
+            <a class="btn" href="#" @click="clearAll">Clear All</a>
         </div>
 
 
@@ -56,114 +70,9 @@
     </div>
 
 
-    <script src="vue.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                newTodo: '',
-                todos: [{
-                    id: '345',
-                    title: '你好',
-                    completed: false
-                }],
-                cacheTodo: {},
-                cacheTitle: '',
-                visibility: 'all'
-
-            },
-            methods: {
-                addTodo: function () {
-
-                    var value = this.newTodo.trim();
-                    var timestamp = Math.floor(Date.now());
-                    if (!value) {
-                        return;
-                    }
-                    this.todos.push({
-                        id: timestamp,
-                        title: value,
-                        computed: false
-
-                    });
-
-                    this.newTodo = ''
-                },
-                removeTodo: function (todo) {
-                    var newIndex = "";
-                    var vm = this;
-                    vm.todos.forEach(function (item, key) {
-                        if (todo.id === item.id) {
-                            newIndex = key
-                        }
-
-                    })
-                    this.todos.splice(newIndex, 1)
-                },
-                editTodo: function (item) {
-                    this.cacheTodo = item;
-                    this.cacheTitle = item.title;
-                    console.log(item)
-                },
-                cancelEdit: function () {
-                    this.cacheTodo = {}
-                },
-                doneEdit: function (item) {
-                    item.title = this.cacheTitle;
-                    this.cacheTitle = '';
-                    this.cacheTodo = {}
-                },
-                clearAll: function () {
-                    this.todos = [];
-                }
-
-
-
-
-            },
-            computed: {
-                filteredTodos: function () {
-                    if (this.visibility == 'all') {
-                        return this.todos;
-                    } else if (this.visibility == 'active') {
-                        var newTodos = [];
-                        this.todos.forEach(function (item) {
-                            if (!item.completed) {
-                                newTodos.push(item);
-                            }
-                        })
-                        return newTodos;
-                    } else if (this.visibility == 'completed') {
-                        var newTodos = [];
-                        this.todos.forEach(function (item) {
-                            if (item.completed) {
-                                newTodos.push(item);
-                            }
-                        })
-                        return newTodos;
-                    }
-                    return [];
-
-                },
-                // undoneRecords: function (item) {
-                //     return this.todos.filter(item => {
-                //         return !item.completed
-                //     }).length;
-                // }
-                undoneRecords: function () {
-                    var undoneRecords = [];
-                    this.todos.forEach(function (item) {
-                        if (!item.completed) {
-                            undoneRecords.push(item);
-                        }
-                    })
-                    return undoneRecords.length;
-                }
-            }
-
-        })
-    </script>
+    <script src="all.js"></script>
 
 </body>
 
