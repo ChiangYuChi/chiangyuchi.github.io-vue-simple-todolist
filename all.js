@@ -4,7 +4,7 @@ var app = new Vue({
         newTodo: '',
         todos: [{
             id: '345',
-            title: '你好',
+            title: '你好，這是我的 Vue Todo 練習 ',
             completed: false
         }],
         cacheTodo: {},
