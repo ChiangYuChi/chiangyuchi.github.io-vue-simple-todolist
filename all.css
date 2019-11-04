@@ -79,12 +79,12 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -99,263 +99,306 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: "";
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /* CSS reset end */
 
 @font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://example.com/MaterialIcons-Regular.eot);
-    /* For IE6-8 */
-    src: local('Material Icons'),
-        local('MaterialIcons-Regular'),
-        url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
-        url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
-        url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"),
+    url(https://example.com/MaterialIcons-Regular.woff) format("woff"),
+    url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
 }
 
 .material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 20px;
-    /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
 
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
 
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
 
-    /* Support for IE. */
-    font-feature-settings: 'liga';
+  /* Support for IE. */
+  font-feature-settings: "liga";
 }
 
-
 html {
-    font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
 
 .todos {
-    background: #FF6666;
-    width: 600px;
-    margin: 45px auto;
-    padding: 15px;
-    box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, .1);
-    color: white;
-
+  background: #ff6666;
+  width: 600px;
+  margin: 45px auto;
+  padding: 15px;
+  box-shadow: -20px -20px 0px 0px rgba(100, 100, 100, 0.1);
+  color: white;
 }
 
 .new-item {
-    width: 450px;
-    height: 30px;
+  width: 450px;
+  height: 30px;
 
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .btn-add {
-    height: 36px;
-    width: 110px;
+  height: 36px;
+  width: 110px;
 
-    background: #FF6666;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, .3);
-    font-size: 15px;
-    font-weight: 300;
-    cursor: pointer;
+  background: #ff6666;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 15px;
+  font-weight: 300;
+  cursor: pointer;
 
-    transition: .2s, ease-out;
-    outline: none;
-
+  transition: 0.2s, ease-out;
+  outline: none;
 }
 
-
-
 .btn-add:hover {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 h1 {
-    font-size: 50px;
-    font-weight: 400;
-    margin: 10px 30px 10px 10px;
+  font-size: 50px;
+  font-weight: 400;
+  margin: 10px 30px 10px 10px;
 }
 
 h2 {
-    font-size: 15px;
-    font-weight: 400;
-    margin: 10px 30px 10px 15px;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 10px 30px 10px 15px;
 }
 
 .add-new-item {
-    margin: 0 0 15px 0;
-    font-size: 15px;
-    display: flex;
-    justify-content: space-between;
+  margin: 0 0 15px 0;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .form-check-label {
-    width: 500px;
+  width: 500px;
 
+  font-size: 15px;
 
-    font-size: 15px;
+  display: flex;
 
-
-    display: flex;
-
-    align-items: center;
-    padding: 10px;
-
+  align-items: center;
+  padding: 10px;
 }
 
 .form-check-input {
-    width: 20px;
-    height: 20px;
-    margin-top: 6px;
-    border: 1px solid black;
-
-
-
+  width: 20px;
+  height: 20px;
+  margin-top: 6px;
+  border: 1px solid black;
 }
 
 .todoDescription {
-    background: rgba(255, 255, 255, 0.1);
-    height: 40px;
-    width: 100%;
-    display: flex;
-    margin: 1px 0 1px 0;
-    flex-direction: row;
-    align-items: center;
-
-
+  background: rgba(255, 255, 255, 0.1);
+  height: 40px;
+  width: 100%;
+  display: flex;
+  margin: 1px 0 1px 0;
+  flex-direction: row;
+  align-items: center;
 }
 
 .btn-delete {
-
-
-    border: none;
-    background: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-    color: #FFF;
-    margin-top: 3px;
-    width: 50px;
+  border: none;
+  background: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  color: #fff;
+  margin-top: 3px;
+  width: 50px;
 }
 
-
-
 .todo-list {
-    font-size: 15px;
-    color: #525252;
+  font-size: 15px;
+  color: #525252;
 }
 
 .todoItem {
-    margin: 0 0 15px 0;
+  margin: 0 0 15px 0;
 }
 
 .msg {
-    margin: 0 0 15px 0;
-    font-size: 15px;
-    color: #525252;
+  margin: 0 0 15px 0;
+  font-size: 15px;
+  color: #525252;
 }
 
 .btn {
-    border: 1px solid #ccc;
-    color: white;
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 5px;
-    padding: 5px 10px;
-    min-width: 30px;
-    text-align: center;
-    text-decoration: none;
-    border: 1px solid white;
+  border: 1px solid #ccc;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 10px;
+  min-width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid white;
 }
 
 .btn.active,
 .btn:hover {
-    background-color: #fff;
-    color: #FF6666;
-    font-size: 17px;
+  background-color: #fff;
+  color: #ff6666;
+  font-size: 17px;
 }
 
 .form-control {
-    width: 600px;
-    height: 20px;
+  width: 600px;
+  height: 20px;
 
-    margin: 10px 0 10px 0;
+  margin: 10px 0 10px 0;
 }
 
 .control {
-    border-top: 1px solid #ddd;
-    color: #525252;
-    font-size: 15px;
-    padding: 15px 0 0 0
+  border-top: 1px solid #ddd;
+  color: #525252;
+  font-size: 15px;
+  padding: 15px 0 0 0;
 }
 
 .mb {
-    margin: 0 0 15px 0;
+  margin: 0 0 15px 0;
 }
 
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 
-    width: 500px;
+  width: 500px;
 }
 
-.input[type=text] {
-    border: 1px solid #ddd;
+.input[type="text"] {
+  border: 1px solid #ddd;
 
-    color: #525252;
-    line-height: 1.2;
-    height: 22px;
-    padding: 5px;
+  color: #525252;
+  line-height: 1.2;
+  height: 22px;
+  padding: 5px;
 }
 
 .footer {
-    margin: 20px 0 0 10px;
+  margin: 20px 0 0 10px;
+}
+
+/* Small devices (landscape phones) */
+
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets) */
+
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops) */
+
+@media (min-width: 992px) {
+}
+
+/* The given screen size or smaller */
+
+/* Extra small devices (portrait phones)*/
+
+@media (max-width: 375px) {
+  .todos {
+    width: 300px;
+  }
+}
+
+@media (max-width: 414px) {
+  .todos {
+    width: 350px;
+  }
+  .btn-add {
+    font-size: 12px;
+  }
+
+  .btn-add:hover {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 575px) {
+  .todos {
+    width: 400px;
+  }
+  .btn-add {
+    font-size: 12px;
+  }
+
+  .btn-add:hover {
+    font-size: 14px;
+  }
+}
+
+/* Small devices (landscape phones)*/
+
+@media (max-width: 767px) {
+}
+
+/* Medium devices (tablets)*/
+
+@media (max-width: 991px) {
 }

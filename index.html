@@ -23,10 +23,12 @@
             <button class="btn-add" type="button" @click="addTodo">ADD ITEM</button>
         </div>
         <ul class="todo-list">
+
             <li class="todoItem" v-for="(item,key) in filteredTodos" @dblclick="editTodo(item)">
+
                 <div class="todoDescription" v-if="item.id !==cacheTodo.id">
 
-
+                    <input type="checkbox" class="form-check-input" v-model="item.completed" :id="item.id">
                     <label class="form-check-label" :class="{'completed':item.completed}" :for="item.id">
                         <p> {{item.title}}</p>
 
@@ -34,7 +36,7 @@
 
 
                     </label>
-                    <input type="checkbox" class="form-check-input" v-model="item.completed" :id="item.id">
+
                     <button type="button" class="btn-delete" @click="removeTodo(item)"><i aria-hidden="true"
                             class="material-icons">delete</i></button>
                     <br>
